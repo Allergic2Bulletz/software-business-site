@@ -1,6 +1,6 @@
 # Wani website
 
-A small static site for the CS 405 Survey 1 / Website assignment, served by GitHub Pages. Plain HTML and CSS, no build step.
+A small static site for CS 405 in plain HTML and CSS.
 
 ## Files
 
