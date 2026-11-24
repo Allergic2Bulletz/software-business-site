@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Software Business</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, sans-serif; color: #172033; background: #f5f7fb; line-height: 1.6; }
+    .container { width: min(100% - 2rem, 960px); margin: auto; }
+    header { background: #172554; color: white; padding: 1rem 0; }
+    header .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    header strong { font-size: 1.15rem; }
+    nav { display: flex; gap: 1rem; }
+    nav a { color: white; }
+    a { color: #1d4ed8; }
+    .hero { padding: 5rem 0; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.1; max-width: 16ch; margin: 0 0 1rem; }
+    .hero p { max-width: 60ch; font-size: 1.2rem; }
+    .button { display: inline-block; padding: .75rem 1.2rem; margin-top: 1rem; border-radius: .4rem; color: white; background: #1d4ed8; text-decoration: none; }
+    section { padding: 2rem 0; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1rem; }
+    .card { background: white; padding: 1.5rem; border-radius: .6rem; }
+    .card h3 { margin-top: 0; }
+    footer { border-top: 1px solid #dbe1ec; margin-top: 2rem; padding: 1.5rem 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <strong>Your Software Business</strong>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <div class="hero">
+      <h1>Software that solves real problems.</h1>
+      <p>Introduce your business here. Explain who you help and what makes your software useful.</p>
+      <a class="button" href="#services">Explore our services</a>
+    </div>
+    <section id="about">
+      <h2>About us</h2>
+      <p>Describe your business idea, your mission, and the people you want to serve.</p>
+    </section>
+    <section id="services">
+      <h2>What we offer</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Our product</h3>
+          <p>Explain what your software does and the problem it solves.</p>
+        </article>
+        <article class="card">
+          <h3>Our customers</h3>
+          <p>Describe the people or businesses that would benefit from it.</p>
+        </article>
+        <article class="card">
+          <h3>Our approach</h3>
+          <p>Share what makes your solution different or valuable.</p>
+        </article>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Add your preferred contact information here. This site is public, so only share information you are comfortable publishing.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="container">Your Software Business &middot; A class project</div>
+  </footer>
+</body>
+</html>
