@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Wani</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="assets/logo.svg" alt="" width="40" height="40">
+        <span class="brand__name">Wani</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="button button--small" href="https://forms.gle/PBToDBpcm4vSQJPt7" target="_blank" rel="noopener">Take our survey</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container contact">
+    <h1>Stay in touch</h1>
+    <p class="contact__intro">Want to hear when Wani is ready to try, or have thoughts to share? Leave your details and we'll get back to you.</p>
+
+    <!--
+      This form sends its answers to a Google Form. To connect it:
+      1. Replace FORM_ID in the action URL with your contact form's ID.
+      2. Replace each entry.NNNN name with that question's entry ID.
+      See README.md for how to find both.
+    -->
+    <form class="contact-form" id="contact-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSc1K8REUkYcqDSz_jFCBy9ssqIvmEXoq6Vqyw_Nk8jdX_FqXQ/formResponse"
+          method="POST" target="contact-form-sink">
+      <label class="field">
+        <span class="field__label">Name</span>
+        <input type="text" name="entry.1123704133" autocomplete="name" required>
+      </label>
+      <label class="field">
+        <span class="field__label">Email</span>
+        <input type="email" name="entry.1291331352" autocomplete="email" required>
+      </label>
+      <label class="field">
+        <span class="field__label">Message <span class="field__optional">(optional)</span></span>
+        <textarea name="entry.1710710511" rows="5"></textarea>
+      </label>
+      <button class="button" type="submit">Send</button>
+    </form>
+
+    <p class="contact-form__thanks" id="contact-thanks" hidden>Thanks! We got your message and will be in touch.</p>
+
+    <!-- The form posts into this hidden frame so visitors stay on this page. -->
+    <iframe name="contact-form-sink" class="visually-hidden" title="Form submission" tabindex="-1"></iframe>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Wani &middot; A university class project</div>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>

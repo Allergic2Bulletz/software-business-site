@@ -1,0 +1,115 @@
+/* Home page: hero, the two feature sections and the closing call to action. */
+
+.hero { padding-block: var(--section-space); }
+.hero__eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--color-warm);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hero__slogan {
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  margin-bottom: 1.25rem;
+}
+.hero__tagline {
+  max-width: 34ch;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  color: var(--color-text-muted);
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+/*
+  Feature sections: text on one side, art on the other.
+  The art runs to the edge of the screen and fades out on the side next to the text.
+  Add .feature--reverse to put the text on the right.
+*/
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text art";
+  align-items: center;
+  padding-block: var(--section-space);
+}
+.feature--reverse { grid-template-areas: "art text"; }
+
+.feature__text {
+  grid-area: text;
+  /* Lines the text up with the centered content above, on its outer edge. */
+  padding-left: max(var(--gutter), calc((100vw - var(--content-width)) / 2));
+  padding-right: 2rem;
+}
+.feature--reverse .feature__text {
+  padding-left: 2rem;
+  padding-right: max(var(--gutter), calc((100vw - var(--content-width)) / 2));
+}
+.feature__text p { max-width: 42ch; }
+
+.feature__list {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.feature__list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.feature__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.feature__art { grid-area: art; }
+.feature__art img {
+  width: 100%;
+  height: auto;
+  /* Fade toward the text (text is on the left, so fade the art's left edge). */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 40%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 40%);
+}
+.feature--reverse .feature__art img {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 40%);
+          mask-image: linear-gradient(to left, transparent 0%, #000 40%);
+}
+
+/* Closing call to action */
+.cta { padding-block: var(--section-space); }
+.cta__inner {
+  padding: clamp(2rem, 5vw, 3.5rem);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+.cta__inner p { max-width: 50ch; margin-inline: auto; }
+.cta .hero__actions { justify-content: center; }
+
+/* Small screens: stack the art above the text and fade its bottom edge. */
+@media (max-width: 800px) {
+  .feature,
+  .feature--reverse {
+    grid-template-columns: 1fr;
+    grid-template-areas: "art" "text";
+  }
+  .feature__text,
+  .feature--reverse .feature__text {
+    padding-inline: var(--gutter);
+  }
+  .feature__art img,
+  .feature--reverse .feature__art img {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+}

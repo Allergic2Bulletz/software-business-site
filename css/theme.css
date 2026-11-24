@@ -1,0 +1,29 @@
+/*
+  Theme: colors, fonts and sizes.
+  Swap or edit this file to restyle the whole site.
+*/
+:root {
+  /* Colors */
+  --color-bg: #f4ede1;           /* page background: light beige */
+  --color-surface: #fbf7f0;      /* cards, inputs */
+  --color-text: #3b3329;         /* warm dark brown */
+  --color-text-muted: #6e6253;
+  --color-accent: #5f8f7f;       /* pond green */
+  --color-accent-dark: #4a7466;
+  --color-accent-soft: #dce8e1;
+  --color-warm: #c98a5e;         /* terracotta highlight */
+  --color-border: #e2d7c5;
+
+  /* Type */
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: var(--font-body);
+  --text-base: 1.125rem;
+  --line-height: 1.7;
+
+  /* Shape and spacing */
+  --radius: 14px;
+  --radius-pill: 999px;
+  --content-width: 1100px;
+  --gutter: 1.5rem;
+  --section-space: clamp(3rem, 8vw, 6rem);
+}
